@@ -143,7 +143,7 @@ public:
         nMaturity = 100;
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 615800;
-        nMaxMoneyOut = 20000000 * COIN;
+        nMaxMoneyOut = 2000000000 * COIN;
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -160,7 +160,7 @@ public:
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 0.4756468 * COIN;
+        txNew.vout[0].nValue = 47.56468 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("041621efe5e6fc7feb9a1e3536364762b6a3c61d65b732ecd58aaaeda436bab413d0c5ea9dd83587be61cbc88fcbb5f32b3ffb54c3b8bd7fbe8e01fbc8b85d06c7") << OP_CHECKSIG;
         
         genesis.vtx.push_back(txNew);
@@ -169,7 +169,7 @@ public:
         genesis.nVersion = 3;
         genesis.nTime = 1508700748; //1454124731;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1143659;
+        genesis.nNonce = 1430175;
 
         // printf("%s genesis.hashMerkleRoot\n", genesis.hashMerkleRoot.ToString().c_str());
         // for (int j=1508700748; j<1508700748+100; j++) {
@@ -189,8 +189,8 @@ public:
         // genesis.nNonce = 0; //2402015;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0000079504ff90a1ed35a2660e9056f452ce952e19cc45cc2d1ce6ece512f1c7"));
-        assert(genesis.hashMerkleRoot == uint256("790a2d6d23c3937f832e974653050df4a6ba4d72f5e48469d51cbc2bb462e0a7"));
+        assert(hashGenesisBlock == uint256("000006e5a8a2f87d039a1a63653055eae705b0d128aaa9d0567907ba16caa442"));
+        assert(genesis.hashMerkleRoot == uint256("b89d3f4e57a9761bfdb7bc7cb4757a1d187a893cc885fee4b9cb3524b3d89e22"));
 
         vSeeds.push_back(CDNSSeedData("18.216.153.7", "18.216.153.7"));
         vSeeds.push_back(CDNSSeedData("18.216.45.104", "18.216.45.104"));

@@ -2069,10 +2069,10 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     int64_t nSubsidy = 0;
-    static const float FACTOR = 0.4756468; //250000/(365*24*60)
+    static const float FACTOR = 47.56468; //25000000/(365*24*60)
     static const int YEAR = 525600; //365*24*60
     if (nHeight == 0) {
-        nSubsidy = 10000001 * COIN;
+        nSubsidy = 1000000001 * COIN;
     } else if (nHeight < 4*YEAR && nHeight > 0) {
         nSubsidy = FACTOR * COIN;
     } else if (nHeight <= 8*YEAR && nHeight >= 4*YEAR) {
@@ -2084,7 +2084,7 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight <= 20*YEAR && nHeight >= 16*YEAR) {
         nSubsidy = 0.2 * FACTOR * COIN;
     } else if (nHeight <= 300*YEAR) {
-        nSubsidy = (25000/(280*YEAR)) * COIN;
+        nSubsidy = (2500000/(280*YEAR)) * COIN;
     } else {
         nSubsidy = 0 * COIN;
     }
